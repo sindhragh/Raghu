@@ -1,0 +1,119 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SindhCoin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf0d5;
+      color: #7c2a19;
+    }
+    header {
+      background-color: #c1440e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .nav-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    .main {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffeccc;
+    }
+    .main-content {
+      max-width: 60%;
+    }
+    .main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .main p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .claim-btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      background-color: #f4c542;
+      border: none;
+      border-radius: 8px;
+      color: #7c2a19;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .timer-box {
+      background-color: #f5d082;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .timer-box h2 {
+      margin-bottom: 0.5rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #c1440e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="SindhCoin Logo" />
+      <h2>SindhCoin</h2>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Rewards</a>
+      <a href="#">Wallet</a>
+      <a href="#">Log in</a>
+    </nav>
+  </header>
+  <div class="main">
+    <div class="main-content">
+      <h1>SindhCoin</h1>
+      <p>Get 0.50 SindhCoin/ hour.</p>
+      <button class="claim-btn">Claim</button>
+    </div>
+    <div class="timer-box">
+      <h2>sindhcoin in</h2>
+      <div id="timer">01:00:00</div>
+    </div>
+  </div>
+  <footer class="footer">
+    &copy; 2025 SindhCoin. All rights reserved.
+  </footer>
+  <script>
+    let timer = 3600; // 1 hour
+    function formatTime(seconds) {
+      const h = String(Math.floor(seconds / 3600)).padStart(2, '0');
+      const m = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      return `${h}:${m}:${s}`;
+    }
+    function updateTimer() {
+      document.getElementById('timer').innerText = formatTime(timer);
+      if (timer > 0) timer--;
+    }
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>File → Save As → index.html (ya koi bhi naam .html ke saath)
